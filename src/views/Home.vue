@@ -1,6 +1,18 @@
 <template>
-  <div class="wrapper">
-    <NextPage v-bind:sections="sections" />
+  <div class="wrapper flex">
+    <NextPage v-bind:sections="sections[0]" />
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+      reprehenderit ipsum amet, libero quidem beatae aliquid quis impedit
+      debitis ab!
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+      reprehenderit ipsum amet, libero quidem beatae aliquid quis impedit
+      debitis ab!
+    </div>
+    <NextPage v-bind:sections="sections[1]" />
+    <NextPage v-bind:sections="sections[2]" />
   </div>
 </template>
 

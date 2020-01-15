@@ -1,28 +1,26 @@
 <template>
   <div class="flex">
-    <template v-for="(item, index) in sections">
-      <div class="two-column" :key="index">
-        <div>
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.contentText }}</p>
-          <div v-if="item.contact.phone">
-            <a :href="`tel:${item.contact.phone}`" class="phone">
-              {{ item.contact.phone }}
-            </a>
-            <a
-              target="blank"
-              :href="`mailto:${item.contact.mail}`"
-              class="mail"
-              >{{ item.contact.mail }}</a
-            >
-          </div>
-          <Button v-if="item.button.text" v-bind:button="item.button" />
+    <div class="two-column">
+      <div>
+        <h2>{{ sections.title }}</h2>
+        <p>{{ sections.contentText }}</p>
+        <div v-if="sections.contact.phone">
+          <a :href="`tel:${sections.contact.phone}`" class="phone">{{
+            sections.contact.phone
+          }}</a>
+          <a
+            target="blank"
+            :href="`mailto:${sections.contact.mail}`"
+            class="mail"
+            >{{ sections.contact.mail }}</a
+          >
         </div>
-        <div>
-          <img :src="item.image.src" :alt="item.image.alt" />
-        </div>
+        <Button v-if="sections.button.text" v-bind:button="sections.button" />
       </div>
-    </template>
+      <div>
+        <img :src="sections.image.src" :alt="sections.image.alt" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -39,11 +37,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.flex {
+.two-column {
   display: flex;
-  flex-direction: column;
-  .two-column{
-      display: flex;
-  }
+  justify-content: space-between;
+}
+img {
+  width: 80%;
 }
 </style>

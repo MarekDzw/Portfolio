@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <AppNav></AppNav>
+    <Menu />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import AppNav from "./components/AppNav.vue";
+import Menu from "./components/Menu.vue";
 
 export default {
   name: "App",
   components: {
-    AppNav
+    Menu
   }
 };
 </script>
@@ -29,5 +29,14 @@ export default {
   padding: 20px;
   margin: auto;
   display: flex;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1250px) {
+  .wrapper {
+    width: 100%;
+  }
 }
 </style>
