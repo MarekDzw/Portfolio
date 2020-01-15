@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div class="two-column">
-      <div>
+      <div class="two-column-content">
         <h2>{{ sections.title }}</h2>
         <p>{{ sections.contentText }}</p>
         <div v-if="sections.contact.phone">
@@ -17,7 +17,7 @@
         </div>
         <Button v-if="sections.button.text" v-bind:button="sections.button" />
       </div>
-      <div>
+      <div class="two-column-image">
         <img :src="sections.image.src" :alt="sections.image.alt" />
       </div>
     </div>
@@ -38,10 +38,14 @@ export default {
 
 <style lang="scss" scoped>
 .two-column {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  &-content{}
+  &-image{
+    grid-column: 2;
+  }
 }
 img {
-  width: 80%;
+  width: 100%;
 }
 </style>
