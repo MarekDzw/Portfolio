@@ -1,87 +1,48 @@
 <template>
-  <div class="wrapper flex">
-    <NextPage v-bind:sections="sections[0]" />
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-      reprehenderit ipsum amet, libero quidem beatae aliquid quis impedit
-      debitis ab!
+  <div class="pad-btm-reset flex">
+    <div class="dark-grad-bg">
+      <NextPage v-bind:sections="store.sections[0]" />
     </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-      reprehenderit ipsum amet, libero quidem beatae aliquid quis impedit
-      debitis ab!
+    <div class="dark-bg">
+      <div class="wrapper column padding">
+        <h2>oferta</h2>
+        <div class="row">
+          <Tile v-bind:tile="store.tile[0]" />
+          <Tile v-bind:tile="store.tile[1]" />
+          <Tile v-bind:tile="store.tile[2]" />
+        </div>
+      </div>
     </div>
-    <NextPage v-bind:sections="sections[1]" />
-    <NextPage v-bind:sections="sections[2]" />
+    <div class="dark-bg">
+      <div class="wrapper padding">
+        <Partner />
+      </div>
+    </div>
+    <NextPage v-bind:sections="store.sections[1]" />
+    <NextPage id="contact" class="pad-btm-reset" v-bind:sections="store.sections[2]" />
   </div>
 </template>
 
 <script>
 import NextPage from "../components/NextPage.vue";
+import Tile from "../components/Tile.vue";
+import Partner from "../components/Partner.vue";
+
+import { store } from "@/store.js";
 
 export default {
   name: "home",
   components: {
-    NextPage
+    NextPage,
+    Tile,
+    Partner
   },
   data() {
     return {
-      sections: [
-        {
-          title: "o firmie",
-          contentText:
-            "lorem ipsum asd klmasd klmfd gklmsd lkgmslkd amsdklamksdk lmasdlk amklsd maklsd maklskdm alks mdaklsd maslk dmlkgfdsmlk msdlfkgm sdlkfgm dsklfgm sdlkfgmdslkfgm sdlkfgm lsdkfgm sldkfgm lsdkfgm sdlkfgms lkdfmg lksdfmg lksdfmg lkdsmf glksdmfg lksdmfglksdmfglk",
-          image: {
-            src: require("@/assets/img/komp.png"),
-            alt: "Portfolio"
-          },
-          contact: {
-            phone: "",
-            mail: ""
-          },
-          button: {
-            text: "Zobacz realizacje",
-            link: "/portfolio"
-          }
-        },
-        {
-          title: "portfolio",
-          contentText:
-            "lorem ipsum asd klmasd klmfd gklmsd lkgmslkd amsdklamksdk lmasdlk amklsd maklsd maklskdm alks mdaklsd maslk dmlkgfdsmlk msdlfkgm sdlkfgm dsklfgm sdlkfgmdslkfgm sdlkfgm lsdkfgm sldkfgm lsdkfgm sdlkfgms lkdfmg lksdfmg lksdfmg lkdsmf glksdmfg lksdmfglksdmfglk",
-          image: {
-            src: require("@/assets/img/marek.png"),
-            alt: "Portfolio"
-          },
-          contact: {
-            phone: "",
-            mail: ""
-          },
-          button: {
-            text: "Zobacz portfolio",
-            link: "/portfolio"
-          }
-        },
-        {
-          title: "kontakt",
-          contentText:
-            "lorem ipsum asd klmasd klmfd gklmsd lkgmslkd amsdklamksdk lmasdlk amklsd maklsd maklskdm alks mdaklsd maslk dmlkgfdsmlk msdlfkgm sdlkfgm dsklfgm sdlkfgmdslkfgm sdlkfgm lsdkfgm sldkfgm lsdkfgm sdlkfgms lkdfmg lksdfmg lksdfmg lkdsmf glksdmfg lksdmfglksdmfglk",
-          image: {
-            src: require("@/assets/img/kontakt.png"),
-            alt: "Kontakt"
-          },
-          contact: {
-            phone: "786 243 312",
-            mail: "kontakt@marekdzwonnik.pl"
-          },
-          button: {
-            text: "",
-            link: ""
-          }
-        }
-      ]
+      store
     };
   }
 };
 </script>
 
-<style></style>
+<style scoped></style>

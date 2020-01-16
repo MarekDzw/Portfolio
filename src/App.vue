@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Menu />
+    <div class="dark-grad-bg">
+      <Menu />
+    </div>
     <router-view></router-view>
     <Footer />
   </div>
@@ -20,7 +22,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600,700");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -29,13 +31,40 @@ export default {
 }
 .wrapper {
   width: 1250px;
-  padding: 20px;
+  padding: 40px;
   margin: auto;
   display: flex;
 }
 .flex {
   display: flex;
   flex-direction: column;
+}
+.column {
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.pad-btm-reset {
+  padding-bottom: 0px;
+}
+h2 {
+  font-size: 27px;
+  padding-bottom: 20px;
+}
+.dark-grad-bg {
+  background: linear-gradient(90deg, black 50%, white 0%);
+}
+.dark-bg {
+  background: black;
+}
+.white {
+  color: white;
 }
 @media (max-width: 1250px) {
   .wrapper {

@@ -1,19 +1,24 @@
 <template>
-  <div class="wrapper nav">
+  <div class="wrapper nav ">
     <div class="nav-logo">
       <router-link to="/">
-        <img
-          src="@/assets/img/logo.svg"
-          alt="Marek Dzwonnik"
-          class="nav-logo-img"
-        />
+        <img src="@/assets/img/logo.svg" alt="Marek Dzwonnik" class="nav-logo-img" />
       </router-link>
     </div>
-    <div class="nav-list none-mobile">
-      <MenuList class="" :store="store" />
+    <div class="none-mobile">
+      <ul>
+        <template v-for="(item, index) in store.navItems">
+          <router-link v-if="item.page" class="nav-link" :key="index" :to="item.url">{{ item.title }}</router-link>
+          <a v-else class="nav-link" :key="index" :href="item.url">{{ item.title }}</a>
+        </template>
+      </ul>
     </div>
     <Sidebar class="none-desktop">
-      <MenuList :store="store" />
+      <ul class="sidebar-menulist" @click="closeSidebarPanel">
+        <template v-for="(item, index) in store.navItems">
+          <router-link class="nav-link" :key="index" :to="item.url">{{ item.title }}</router-link>
+        </template>
+      </ul>
     </Sidebar>
     <Burger class="none-desktop" />
   </div>
@@ -22,21 +27,22 @@
 <script>
 import Burger from "./menu/Burger.vue";
 import Sidebar from "./menu/Sidebar.vue";
-import MenuList from "./menu/MenuList.vue";
 
-import { store } from "@/store.js";
+import { store, mutations } from "@/store.js";
 
 export default {
   name: "Menu",
   components: {
     Burger,
-    Sidebar,
-    MenuList
+    Sidebar
   },
   data() {
     return {
       store
     };
+  },
+  methods: {
+    closeSidebarPanel: mutations.toggleNav
   }
 };
 </script>
@@ -51,21 +57,28 @@ export default {
 .nav {
   justify-content: space-between;
   align-items: center;
-  &-link {
-    color: black;
-    text-decoration: none;
-    margin-left: 30px;
-  }
   &-logo-img {
     width: 300px;
   }
 }
+.nav-link {
+  color: black;
+  text-decoration: none;
+  margin-left: 40px;
+  font-weight: bold;
+  &:hover {
+    color: #f2c96e;
+  }
+}
 .router-link-active {
-  text-decoration: underline;
-  text-decoration-color: gold;
+  color: #f2c96e;
+}
+.sidebar-menulist {
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 769px) {
-  .none-desktop  {
+  .none-desktop {
     display: block;
   }
   .none-mobile {

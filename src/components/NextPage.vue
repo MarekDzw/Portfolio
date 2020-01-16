@@ -1,24 +1,23 @@
 <template>
-  <div class="flex">
-    <div class="two-column">
+  <div class="wrapper flex padding">
+    <div class="two-column" :class="{ white: sections.background }">
+      <img :src="sections.image.src" :alt="sections.image.alt" />
       <div class="two-column-content">
         <h2>{{ sections.title }}</h2>
         <p>{{ sections.contentText }}</p>
         <div v-if="sections.contact.phone">
-          <a :href="`tel:${sections.contact.phone}`" class="phone">{{
+          <a :href="`tel:${sections.contact.phone}`" class="phone">
+            {{
             sections.contact.phone
-          }}</a>
+            }}
+          </a>
           <a
             target="blank"
             :href="`mailto:${sections.contact.mail}`"
             class="mail"
-            >{{ sections.contact.mail }}</a
-          >
+          >{{ sections.contact.mail }}</a>
         </div>
         <Button v-if="sections.button.text" v-bind:button="sections.button" />
-      </div>
-      <div class="two-column-image">
-        <img :src="sections.image.src" :alt="sections.image.alt" />
       </div>
     </div>
   </div>
@@ -38,14 +37,30 @@ export default {
 
 <style lang="scss" scoped>
 .two-column {
-  display: grid;
-  grid-auto-columns: 1fr 1fr;
-  &-content{}
-  &-image{
-    grid-column: 2;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50%;
+    width: 40%;
+    margin: auto 0;
   }
 }
+.phone,
+.mail {
+  font-size: 20px;
+  display: flex;
+  font-weight: 500;
+  color: #d04844;
+  text-decoration: none;
+}
 img {
-  width: 100%;
+  width: 60%;
 }
 </style>

@@ -20,7 +20,6 @@ export default {
 .footer {
   background: #394c8d;
   color: white;
-  padding: 20px 0px;
   .none {
     display: none;
   }
