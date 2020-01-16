@@ -1,10 +1,6 @@
 <template>
   <div class="sidebar">
-    <div
-      class="sidebar-backdrop"
-      @click="closeSidebarPanel"
-      v-if="isPanelOpen"
-    ></div>
+    <div class="sidebar-backdrop" @click="closeSidebarPanel" v-if="isPanelOpen"></div>
     <transition name="slide">
       <div v-if="isPanelOpen" class="sidebar-panel">
         <slot></slot>
@@ -50,13 +46,13 @@ export default {
 
 .sidebar-panel {
   overflow-y: auto;
-  background-color: #b0bbdf;
+  background-color: black;
   position: fixed;
   right: 0;
   top: 0;
   height: 100%;
   z-index: 999;
-  padding: 3rem 20px 2rem 20px;
-  width: 30vw;
+  padding: 8rem 20px 2rem 20px;
+  min-width: 30vw;
 }
 </style>

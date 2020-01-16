@@ -56,9 +56,9 @@ button:focus {
   background-color: #f2c96e;
   position: absolute;
   top: 50%;
-  right: 6px;
-  left: 6px;
-  height: 2px;
+  right: 0px;
+  left: 0px;
+  height: 3px;
   width: auto;
   margin-top: -1px;
   transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
@@ -106,5 +106,7 @@ button:focus {
 
 #burger.active .burger-bar--3 {
   transform: rotate(-45deg);
+}
+@media (max-width: 769px) {
 }
 </style>

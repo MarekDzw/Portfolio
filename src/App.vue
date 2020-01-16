@@ -53,6 +53,13 @@ export default {
 .pad-btm-reset {
   padding-bottom: 0px;
 }
+.none-desktop {
+  display: none;
+}
+.none-mobile {
+  display: flex;
+}
+
 h2 {
   font-size: 27px;
   padding-bottom: 20px;
@@ -69,6 +76,20 @@ h2 {
 @media (max-width: 1250px) {
   .wrapper {
     width: 100%;
+  }
+}
+@media (max-width: 769px) {
+  .none-desktop {
+    display: block;
+  }
+  .none-mobile {
+    display: none;
+  }
+  .wrapper {
+    padding: 20px;
+  }
+  .dark-grad-bg {
+    background: linear-gradient(90deg, black 70%, white 0%);
   }
 }
 </style>
