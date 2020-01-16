@@ -1,17 +1,26 @@
 <template>
-  <div class="flex" :class="tile.class">
+  <div class="flex width anime" :class="tile.class">
     <h3 class="weight-xs">{{ tile.title }}</h3>
     <h3 class="margin">{{ tile.subtitle }}</h3>
-    <img :src="tile.image.src" :alt="tile.image.alt" />
+    <div class="center">
+      <img :src="tile.image.src" :alt="tile.image.alt" />
+    </div>
     <p>{{ tile.content }}</p>
-    <router-link :to="tile.button.link">{{ tile.button.text }}</router-link>
+    <ButtonBorder class="margin">
+      <router-link :to="tile.button.link">{{ tile.button.text }}</router-link>
+    </ButtonBorder>
   </div>
 </template>
 
 <script>
+import ButtonBorder from "./ButtonBorder.vue";
+
 export default {
   name: "Tile",
-  props: ["tile"]
+  props: ["tile"],
+  components: {
+    ButtonBorder
+  }
 };
 </script>
 
@@ -30,7 +39,6 @@ export default {
   }
   img {
     width: 100%;
-    height: 321px;
   }
   p {
     margin: 20px 0;
@@ -40,11 +48,13 @@ export default {
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
-    width: fit-content;
-    &:hover {
-      color: red;
-    }
+    margin-bottom: 10px;
   }
+}
+
+.width {
+  max-width: 32%;
+  border-radius: 4px;
 }
 .color-st {
   background: white;
@@ -54,5 +64,34 @@ export default {
 }
 .color-rd {
   background: #f2c96e;
+}
+@media (max-width: 1210px) {
+  .flex {
+    padding: 10px;
+    h3 {
+      font-size: 23px;
+    }
+  }
+}
+@media (max-width: 769px) {
+  .flex {
+    margin-bottom: 40px;
+    h3 {
+      font-size: 27px;
+    }
+    img {
+      width: 90%;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .width {
+    max-width: 100%;
+  }
+  .flex:last-of-type {
+    margin-bottom: 100px;
+  }
 }
 </style>

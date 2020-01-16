@@ -2,7 +2,7 @@
   <div class="wrapper flex padding">
     <div
       class="two-column"
-      :class="{ contact: sections.contact.state, white: sections.background  }"
+      :class="{ contact: sections.contact.state, white: sections.background.all, grad: sections.background.grad   }"
     >
       <img :src="sections.image.src" :alt="sections.image.alt" />
       <div class="two-column-content">
@@ -71,7 +71,9 @@ export default {
     width: 55%;
   }
 }
-
+.grad img {
+  margin-top: -120px;
+}
 @media (max-width: 769px) {
   .two-column {
     flex-direction: column;

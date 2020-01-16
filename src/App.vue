@@ -67,6 +67,9 @@ h2 {
   font-size: 40px;
   padding-bottom: 20px;
 }
+h3 {
+  font-size: 27px;
+}
 p {
   font-size: 18px;
   line-height: 24px;
@@ -107,5 +110,9 @@ p {
   .pad-btm-reset {
     padding-bottom: 0px;
   }
+  .row {
+  flex-direction: column;
+  justify-content: space-between;
+}
 }
 </style>

@@ -24,7 +24,10 @@ export const store = Vue.observable({
         text: "Zobacz realizacje",
         link: "/portfolio"
       },
-      background: true
+      background: {
+        all: true,
+        grad: false
+      }
     },
     {
       title: "portfolio",
@@ -41,7 +44,10 @@ export const store = Vue.observable({
         text: "Zobacz portfolio",
         link: "/portfolio"
       },
-      background: false
+      background: {
+        all: false,
+        grad: true
+      }
     },
     {
       title: "kontakt",
@@ -57,10 +63,13 @@ export const store = Vue.observable({
         mail: "kontakt@marekdzwonnik.pl"
       },
       button: {
-        text: "",
-        link: ""
+        text: "Wypełnij formularz",
+        link: "/contact"
       },
-      background: false
+      background: {
+        all: false,
+        grad: false
+      }
     }
   ],
   tile: [
