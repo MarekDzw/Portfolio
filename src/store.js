@@ -12,14 +12,13 @@ export const store = Vue.observable({
     {
       title: "o firmie",
       contentText:
-        "Firma została założona w 2019 roku, lecz pierwsze projekty stron powstawały już 4 lata wcześniej. Obecnie zajmuję się tworzeniem stron, blogów i wizytówek dopasowanych do potrzeb klienta. Oferuje również rozwiązania indywidualne, dzięki którym zrealizuje każdy pomysł.",
+        "Firma została założona w 2019 roku, lecz pierwsze projekty stron powstawały już 4 lata wcześniej. Obecnie zajmuję się tworzeniem stron, blogów i wizytówek dopasowanych do potrzeb klienta. Rozwiązania indywidualne pozwalają na realizację każdego pomysłu.",
       image: {
         src: require("@/assets/img/komp.png"),
         alt: "Portfolio"
       },
       contact: {
-        phone: "",
-        mail: ""
+        state: false
       },
       button: {
         text: "Zobacz realizacje",
@@ -36,8 +35,7 @@ export const store = Vue.observable({
         alt: "Portfolio"
       },
       contact: {
-        phone: "",
-        mail: ""
+        state: false
       },
       button: {
         text: "Zobacz portfolio",
@@ -54,6 +52,7 @@ export const store = Vue.observable({
         alt: "Kontakt"
       },
       contact: {
+        state: true,
         phone: "786 243 312",
         mail: "kontakt@marekdzwonnik.pl"
       },

@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="wrapper">
       <p>
-        Marek Dzwonnik 2019 © All rights reserver.
+        Marek Dzwonnik &copy; All rights reserver.
         <br class="none" />Designed by
         <a href="https://grudzienkatarzyna.pl/" target="blank">Katarzyna Grudzień.</a>
       </p>

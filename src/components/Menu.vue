@@ -64,6 +64,7 @@ export default {
     text-decoration: none;
     margin-left: 40px;
     font-weight: bold;
+    transition: all 250ms ease-in-out;
     &:hover {
       color: #f2c96e;
     }

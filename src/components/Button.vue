@@ -13,18 +13,33 @@ export default {
 
 <style lang="scss" scoped>
 button {
+  position: relative;
+  overflow: hidden;
   background: #f2c96e;
   color: #d04844;
-  padding: 5px 25px;
+  padding: 10px 25px;
   border: none;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
-  &:hover {
-    background: #ffe09a;
-    color: #ff9c9a;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 250ms;
+    opacity: 0;
+    transform: translate(-100%, -10%) rotate(-40deg);
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  &:hover:before {
+    opacity: 1;
+    transform: translate(100%, -10%) rotate(-40deg);
   }
 }
 </style>

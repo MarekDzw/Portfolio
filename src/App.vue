@@ -31,7 +31,10 @@ export default {
 }
 .wrapper {
   width: 1250px;
-  padding: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   margin: auto;
   display: flex;
 }
@@ -61,8 +64,12 @@ export default {
 }
 
 h2 {
-  font-size: 27px;
+  font-size: 40px;
   padding-bottom: 20px;
+}
+p {
+  font-size: 18px;
+  line-height: 24px;
 }
 .dark-grad-bg {
   background: linear-gradient(90deg, black 50%, white 0%);
@@ -76,6 +83,11 @@ h2 {
 @media (max-width: 1250px) {
   .wrapper {
     width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .pad-btm-reset {
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 769px) {
@@ -85,11 +97,15 @@ h2 {
   .none-mobile {
     display: none;
   }
-  .wrapper {
-    padding: 20px;
-  }
   .dark-grad-bg {
-    background: linear-gradient(90deg, black 70%, white 0%);
+    background: black;
+  }
+  .padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .pad-btm-reset {
+    padding-bottom: 0px;
   }
 }
 </style>
