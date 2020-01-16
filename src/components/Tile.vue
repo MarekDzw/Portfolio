@@ -90,8 +90,5 @@ export default {
   .width {
     max-width: 100%;
   }
-  .flex:last-of-type {
-    margin-bottom: 100px;
-  }
 }
 </style>
