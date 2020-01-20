@@ -1,27 +1,27 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "../views/Home.vue";
-import Services from "../views/Services.vue";
-import Porfolio from "../views/Portfolio.vue";
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '../views/Home.vue';
+import Services from '../views/Services.vue';
+import Porfolio from '../views/Portfolio.vue';
 
 Vue.use(Router);
 
 const router = new Router({
-  mode: "history",
+  mode: 'history',
   routes: [
     {
-      path: "/",
-      name: "home",
+      path: '/',
+      name: 'home',
       component: Home
     },
     {
-      path: "/services",
-      name: "services",
+      path: '/services',
+      name: 'services',
       component: Services
     },
     {
-      path: "/portfolio",
-      name: "portfolio",
+      path: '/portfolio',
+      name: 'portfolio',
       component: Porfolio
     }
   ]
