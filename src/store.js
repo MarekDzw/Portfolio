@@ -4,7 +4,6 @@ export const store = Vue.observable({
   isNavOpen: false,
   navItems: [
     { title: "usługi", url: "/services", page: true },
-    { title: "współpraca", url: "/partnership", page: true },
     { title: "portfolio", url: "/portfolio", page: true },
     { title: "kontakt", url: "#contact", page: false }
   ],
@@ -63,8 +62,8 @@ export const store = Vue.observable({
         mail: "kontakt@marekdzwonnik.pl"
       },
       button: {
-        text: "Wypełnij formularz",
-        link: "/contact"
+        text: "",
+        link: ""
       },
       background: {
         all: false,
@@ -117,6 +116,20 @@ export const store = Vue.observable({
         link: "/services/blogi"
       },
       class: "color-rd"
+    }
+  ],
+  portfolio: [
+    {
+      title: "Grudzień Katarzyna - Portfolio",
+      link: "https://grudzienkatarzyna.pl/",
+      description: "Strona portfolio dla grafika.",
+      img: require("@/assets/img/grudzien.png")
+    },
+    {
+      title: "Greathouse - Landing page",
+      link: "https://greathouse.pl/",
+      description: "Landing page do plakatu dla biura nieruchomości. ",
+      img: require("@/assets/img/greathouse.png")
     }
   ]
 });

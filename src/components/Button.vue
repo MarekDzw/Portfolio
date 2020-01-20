@@ -32,14 +32,14 @@ button {
     width: 100%;
     height: 100%;
     z-index: 1;
-    transition: all 250ms;
+    transition: all 400ms;
     opacity: 0;
     transform: translate(-100%, -10%) rotate(-40deg);
     background-color: rgba(255, 255, 255, 0.9);
   }
   &:hover:before {
-    opacity: 1;
-    transform: translate(100%, -10%) rotate(-40deg);
+    opacity: 0.7;
+    transform: translate(80%, -10%) rotate(-40deg);
   }
 }
 </style>

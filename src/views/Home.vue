@@ -13,11 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="dark-bg">
-      <div class="wrapper padding">
-        <Partner />
-      </div>
-    </div>
+
     <NextPage v-bind:sections="store.sections[1]" />
     <NextPage id="contact" class="pad-btm-reset" v-bind:sections="store.sections[2]" />
   </div>
@@ -26,7 +22,6 @@
 <script>
 import NextPage from "../components/NextPage.vue";
 import Tile from "../components/Tile.vue";
-import Partner from "../components/Partner.vue";
 
 import { store } from "@/store.js";
 
@@ -34,8 +29,7 @@ export default {
   name: "home",
   components: {
     NextPage,
-    Tile,
-    Partner
+    Tile
   },
   data() {
     return {
