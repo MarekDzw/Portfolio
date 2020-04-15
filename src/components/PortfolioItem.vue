@@ -34,7 +34,8 @@ export default {
 <style lang="scss" scoped>
 .portfolio-item {
   position: relative;
-  width: 33%;
+  width: calc(33% - 40px);
+  margin: 20px;
   overflow: hidden;
   padding-bottom: 40px;
   border-bottom-left-radius: 4px;
@@ -56,7 +57,7 @@ h4 {
 }
 .overlay {
   position: absolute;
-  top: 83%;
+  top: 82%;
   bottom: 0;
   color: #d04844;
   width: 100%;
@@ -107,7 +108,7 @@ h4 {
 }
 @media (max-width: 1250px) {
   .portfolio-item {
-    width: 48%;
+    width: calc(50% - 40px);
     padding-bottom: 25px;
     &:hover {
       transform: none;
@@ -121,6 +122,7 @@ h4 {
 @media (max-width: 769px) {
   .portfolio-item {
     width: 100%;
+    margin: 0px;
     margin-bottom: 100px;
   }
   .overlay {

@@ -3,7 +3,6 @@ const path = require('path');
 const history = require('connect-history-api-fallback');
 
 const app = express();
-
 const staticFileMiddleware = express.static(path.join(__dirname + '/public'));
 
 app.use(staticFileMiddleware);

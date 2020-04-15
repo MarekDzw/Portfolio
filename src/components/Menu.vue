@@ -88,7 +88,7 @@ export default {
 @media (max-width: 890px) {
   .nav {
     &-logo-img {
-      width: 70%;
+      width: 60%;
     }
     &-link {
       margin-left: 20px;

@@ -7,7 +7,7 @@
     </div>
     <p>{{ tile.content }}</p>
     <ButtonBorder class="margin">
-      <router-link :to="tile.button.link">{{ tile.button.text }}</router-link>
+      <router-link :to="{ name: 'services', params: { serviceName: tile.button.link }}">{{ tile.button.text }}</router-link>
     </ButtonBorder>
   </div>
 </template>

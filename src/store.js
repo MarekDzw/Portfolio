@@ -3,7 +3,14 @@ import Vue from "vue";
 export const store = Vue.observable({
   isNavOpen: false,
   navItems: [
-    { title: "usługi", url: "/services", page: true },
+    // { title: "usługi", url: "/services", page: true },
+    // { title: "blogi", url: "/services/blog", page: true },
+    // { title: "strony", url: "/services/website", page: true },
+    // {
+    //   title: "rozwiązania indywidualne",
+    //   url: "/services/individual-service",
+    //   page: true
+    // },
     { title: "portfolio", url: "/portfolio", page: true },
     { title: "kontakt", url: "#contact", page: false }
   ],
@@ -73,6 +80,7 @@ export const store = Vue.observable({
   ],
   tile: [
     {
+      id: "blog",
       title: "Blogi",
       subtitle: "Publikuj artykuły",
       image: {
@@ -83,26 +91,28 @@ export const store = Vue.observable({
         "Lorem ipsum dodalsd kalsdk lasldk alsdk alskd alsd kal kald kasld kas dlkasdl aks dlaskdlask las kalkal kal",
       button: {
         text: "czytaj więcej",
-        link: "/services/blogi"
+        link: "blog"
       },
       class: "color-st"
     },
     {
+      id: "website",
       title: "Strony internetowe",
       subtitle: "Zaistniej w sieci",
       image: {
         src: require("@/assets/img/pages.png"),
-        alt: "Blogi"
+        alt: "Strony internetowe"
       },
       content:
         "Lorem ipsum dodalsd kalsdk lasldk alsdk alskd alsd kal kald kasld kas dlkasdl aks dlaskdlask las kalkal kal",
       button: {
         text: "czytaj więcej",
-        link: "/services/blogi"
+        link: "website"
       },
       class: "color-nd"
     },
     {
+      id: "individual-service",
       title: "Rozwiązania indywidualne",
       subtitle: "Wyróżnij się",
       image: {
@@ -113,17 +123,29 @@ export const store = Vue.observable({
         "Lorem ipsum dodalsd kalsdk lasldk alsdk alskd alsd kal kald kasld kas dlkasdl aks dlaskdlask las kalkal kal",
       button: {
         text: "czytaj więcej",
-        link: "/services/blogi"
+        link: "individual-service"
       },
       class: "color-rd"
     }
   ],
   portfolio: [
     {
-      title: "Grudzień Katarzyna - Portfolio",
+      title: "Aleksandra Kłośińska - Portfolio ",
+      link: "#",
+      description: "Strona portfolio dla artysty malarza.",
+      img: require("@/assets/img/klosinska.png")
+    },
+    {
+      title: "Grudzień Katarzyna - Portfolio v2",
       link: "https://grudzienkatarzyna.pl/",
       description: "Strona portfolio dla grafika.",
       img: require("@/assets/img/grudzien.png")
+    },
+    {
+      title: "Grudzień Katarzyna - Portfolio v1",
+      link: "https://marekdzw.github.io/GK_Portfolio/",
+      description: "Strona portfolio dla grafika.",
+      img: require("@/assets/img/grudzienv1.png")
     },
     {
       title: "Greathouse - Landing page",
