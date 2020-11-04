@@ -1,7 +1,8 @@
 module.exports = {
-    pwa: {
-      iconPaths: {
-         favicon32: 'icon.png',
-      }
-    }
-  }
+  publicPath: process.env.NODE_ENV === 'production' ? '/Portfolio-Vue/' : '/',
+  pwa: {
+    iconPaths: {
+      favicon32: 'icon.png',
+    },
+  },
+};
