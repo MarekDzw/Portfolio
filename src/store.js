@@ -11,7 +11,7 @@ export const store = Vue.observable({
     //   url: "/services/individual-service",
     //   page: true
     // },
-    { title: 'portfolio', url: '/portfolio', page: true },
+    { title: 'portfolio', url: '/Portfolio-Vue/portfolio', page: true },
     { title: 'kontakt', url: '#contact', page: false },
   ],
   sections: [
@@ -28,7 +28,7 @@ export const store = Vue.observable({
       },
       button: {
         text: 'Zobacz realizacje',
-        link: '/portfolio',
+        link: '/Portfolio-Vue/portfolio',
       },
       background: {
         all: true,
@@ -48,7 +48,7 @@ export const store = Vue.observable({
       },
       button: {
         text: 'Zobacz portfolio',
-        link: '/portfolio',
+        link: '/Portfolio-Vue/portfolio',
       },
       background: {
         all: false,
