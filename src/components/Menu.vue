@@ -1,8 +1,12 @@
 <template>
   <div class="wrapper nav">
     <div class="nav-logo">
-      <router-link to="/">
-        <img src="@/assets/img/logo.svg" alt="Marek Dzwonnik" class="nav-logo-img" />
+      <router-link to="/Portfolio-Vue/">
+        <img
+          src="@/assets/img/logo.svg"
+          alt="Marek Dzwonnik"
+          class="nav-logo-img"
+        />
       </router-link>
     </div>
     <div class="none-mobile">
@@ -13,15 +17,20 @@
             class="nav-link"
             :key="index"
             :to="item.url"
-          >{{ item.title }}</router-link>
-          <a v-else class="nav-link" :key="index" :href="item.url">{{ item.title }}</a>
+            >{{ item.title }}</router-link
+          >
+          <a v-else class="nav-link" :key="index" :href="item.url">{{
+            item.title
+          }}</a>
         </template>
       </ul>
     </div>
     <Sidebar class="none-desktop">
       <ul class="sidebar-menulist" @click="closeSidebarPanel">
         <template v-for="(item, index) in store.navItems">
-          <router-link class="nav-link-sb" :key="index" :to="item.url">{{ item.title }}</router-link>
+          <router-link class="nav-link-sb" :key="index" :to="item.url">{{
+            item.title
+          }}</router-link>
         </template>
       </ul>
     </Sidebar>
@@ -30,25 +39,25 @@
 </template>
 
 <script>
-import Burger from "./menu/Burger.vue";
-import Sidebar from "./menu/Sidebar.vue";
+import Burger from './menu/Burger.vue';
+import Sidebar from './menu/Sidebar.vue';
 
-import { store, mutations } from "@/store.js";
+import { store, mutations } from '@/store.js';
 
 export default {
-  name: "Menu",
+  name: 'Menu',
   components: {
     Burger,
-    Sidebar
+    Sidebar,
   },
   data() {
     return {
-      store
+      store,
     };
   },
   methods: {
-    closeSidebarPanel: mutations.toggleNav
-  }
+    closeSidebarPanel: mutations.toggleNav,
+  },
 };
 </script>
 
