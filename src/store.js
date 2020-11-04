@@ -131,7 +131,7 @@ export const store = Vue.observable({
   portfolio: [
     {
       title: 'Aleksandra Kłośińska - Portfolio ',
-      link: '#',
+      link: 'https://aleksandraklosinska.com/',
       description: 'Strona portfolio dla artysty malarza.',
       img: require('@/assets/img/klosinska.png'),
     },
